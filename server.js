@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: process.env.CLIENT_URL || 'https://farm2mandi-frontend.vercel.app',
   credentials: true
 }));
 
