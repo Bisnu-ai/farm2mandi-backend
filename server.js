@@ -19,10 +19,12 @@ app.use(express.urlencoded({ extended: true }));
 // CORS middleware
 
 app.use(cors({
-  origin: true,          // allow all origins
-  credentials: true
+  origin: "*",               // allow all origins
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
+// Handle preflight requests
 app.options("*", cors());
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
