@@ -18,9 +18,12 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
 
-app.use(cors());
-app.options("*", cors());
+app.use(cors({
+  origin: true,          // allow all origins
+  credentials: true
+}));
 
+app.options("*", cors());
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
