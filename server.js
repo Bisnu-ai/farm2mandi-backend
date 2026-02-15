@@ -19,11 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 // CORS middleware
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://farm2mandi-frontend.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: "https://farm2mandi-frontend.vercel.app",
   credentials: true
 }));
 
