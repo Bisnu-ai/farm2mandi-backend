@@ -18,10 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
 
-app.use(cors({
-  origin: "https://farm2mandi-frontend.vercel.app",
-  credentials: true
-}));
+app.use(cors());
+app.options("*", cors());
 
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
