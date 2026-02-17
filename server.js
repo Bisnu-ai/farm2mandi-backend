@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 // CORS middleware
 
 app.use(cors({
-  origin: "*",
+  origin: process.env.CLIENT_URL,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   preflightContinue: false,
